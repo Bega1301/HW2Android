@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.geektech.taskapp.R;
@@ -37,19 +38,23 @@ public class BoardFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         TextView textView = view.findViewById(R.id.textView);
+        ImageView imageView=view.findViewById(R.id.imageView);
         Button btnStart = view.findViewById(R.id.btnStart);
         int pos = getArguments().getInt("pos");
         switch (pos) {
             case 0:
                 textView.setText("Привет");
+                imageView.setImageResource(R.drawable.onboard_page1);
                 btnStart.setVisibility (View.GONE);
                 break;
             case 1:
                 textView.setText("Как дела?");
+                imageView.setImageResource(R.drawable.onboard_page2);
                 btnStart.setVisibility (View.GONE);
                 break;
             case 2:
                 textView.setText("Че делаешь?");
+                imageView.setImageResource(R.drawable.onboard_page3);
                 btnStart.setVisibility (View.VISIBLE);
                 btnStart.setOnClickListener(new View.OnClickListener() {
                     @Override
