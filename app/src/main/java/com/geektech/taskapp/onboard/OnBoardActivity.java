@@ -10,10 +10,14 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 
 import com.geektech.taskapp.R;
+import com.google.android.material.tabs.TabLayout;
 
 public class OnBoardActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
+    private TabLayout tabLayout;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +25,12 @@ public class OnBoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_on_board);
         viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
+
     }
 }
 
 class ViewPagerAdapter extends FragmentPagerAdapter {
+
 
     public ViewPagerAdapter(@NonNull FragmentManager fm) {
         super(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
@@ -40,8 +46,11 @@ class ViewPagerAdapter extends FragmentPagerAdapter {
         return fragment;
     }
 
+
     @Override
     public int getCount() {
         return 3;
     }
+
+
 }
